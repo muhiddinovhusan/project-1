@@ -16,7 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) =>{
       
     <Sidebar />
 
-    <section className="w-full flex flex-col p-8 ml-2  gap-5">
+    <section className="w-full flex flex-col p-8 ml-2 max-xl:ml-16  gap-5">
     
     {children}
     </section>
