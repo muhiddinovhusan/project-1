@@ -1,11 +1,19 @@
 import { create } from "zustand";
 import { produce } from "immer";
 import axios from "axios";
+import toast from "react-hot-toast";
 
-const AuthStore = (set: (produce: () => void) => void) => ({
+interface AuthState {
+  email: string;
+  password: string;
+}
+
+interface AuthActions {
+  login: (user: { email: string; password: string }) => Promise<void>;
+}
+
+const AuthStore = (set: (fn: (state: AuthState) => AuthState) => void) => ({
   email: "",
-  fullName: "",
-  phoneNumber: "",
   password: "",
   login: async (user: { email: string; password: string }) => {
     try {
@@ -14,17 +22,22 @@ const AuthStore = (set: (produce: () => void) => void) => ({
         user
       );
       const data = await res.data;
+      localStorage.setItem('access_token', data.access_token);
+
       console.log(data);
       set(
-        produce((state) => {
+        produce((state: AuthState) => {
           state.email = data.email;
           state.password = data.password;
         })
       );
-    } catch (error) {
-      console.log(error.message);
+      toast.success("Login successful")
+
+    } catch (error :any)  {
+toast.error("Make sure you are registered or enter the correct information")
+console.error(error.message);
     }
   },
 });
 
-export const useAuthStore = create(AuthStore);
+export const useAuthStore = create<AuthState & AuthActions>(AuthStore);
