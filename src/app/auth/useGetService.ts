@@ -59,7 +59,7 @@ const ServiceStore = create((set: SetState<any>) => ({
             }
             const res = await axios.post("https://app.olimjanov.uz/v1/service/create", { owner_email: email, ...newService }, { headers });
             const data = await res.data;
-           
+           toast.success('Service created successfully')
             console.log(data);
         } catch (error: any) {
             console.log(error.message);

@@ -82,7 +82,7 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4 md:hidden ">
         {services.map((item: ServicesType, i: number) => (
-          <div className="bg-white p-4 rounded-lg shadow">
+          <div key={item.id} className="bg-white p-4 rounded-lg shadow">
             <div className=" flex gap-2 ">
               <h6 className="text-sm font-bold">
                 #

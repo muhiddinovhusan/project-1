@@ -40,7 +40,7 @@ const RegisterStore = (set:(produce:(state:RegisterState)=> RegisterState)=>void
                 state.phone_number = data.phone_number;
                 state.full_name = data.full_name;
                 state.message = data.message;
-                toast.success("Successfully Registered");
+                toast.success("Successfully Registered ! you are need to input verification code ");
               })
             );
           } catch (error:any) {

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useServiceStore } from '../../app/auth/useGetService'
+import { ArrowLeftCircleIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const CreateServices = () => {
     const {addService} =useServiceStore();
@@ -30,26 +32,45 @@ const CreateServices = () => {
 
 
 
+
+
   return (
-    <form onSubmit={handleSubmit}>
-<input type="text"
-id='name'
-name='name'
-className='bg-black text-white'
-value={data.name}
-onChange={handleChange}
+    <div className=''>
 
-/>
-<input type="number"
-id='price'
-name='price'
-className='bg-black text-white w-20'
-onChange={handleChange}
-value={data.price}
+<Link to='/'>
+  <ArrowLeftCircleIcon className='stroke-black w-8 h-8 '/>
+</Link>
 
-/>
-<button type='submit'>Submit</button>
+    <form className='pt-7' onSubmit={handleSubmit}>
+<h2>
+  Create Services
+  </h2>
+  <div className="py-4">
+            <span className="mb-2 text-md ">Service Name</span>
+            <input type="text"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="name"
+              id="name"
+              value={data.name}
+              onChange={handleChange}
+              />
+          </div>
+          <div className="py-4">
+            <span className="mb-2 text-md ">Price</span>
+            <input type="number"
+              required
+              className="w-full p-2 border border-gray-300 rounded-md placeholder:font-light placeholder:text-gray-500"
+              name="price"
+              id="price"
+              value={data.price}
+              onChange={handleChange}
+              />
+
+          </div>
+<button type='submit'  className="w-20 bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border-gray-900 ">Submit</button>
     </form>
+              </div>
   )
 }
 
