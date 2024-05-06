@@ -6,6 +6,7 @@ import ForgotPassword from "../pages/forgot-password";
 import Home from "../pages/home";
 import Layout from "../layout/layout";
 import CreateServices from "../pages/create/CreateServices";
+import Tasks from "../pages/tasks/Tasks";
 // import { ForgotPassword, Home, Login, Register, Verify } from "../pages";
 
 const PageRoutes = () => {
@@ -29,6 +30,14 @@ const PageRoutes = () => {
           element={
             <Layout>
               <CreateServices />
+            </Layout>
+          }
+        /> 
+        <Route
+          path="/tasks"
+          element={
+            <Layout>
+              <Tasks />
             </Layout>
           }
         /> 

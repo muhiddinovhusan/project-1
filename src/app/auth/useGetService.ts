@@ -37,7 +37,9 @@ const ServiceStore = create((set: SetState<any>) => ({
                 "Authorization": `${token2}`,
                 "Content-Type": "application/json"
             };
-            const res = await axios.post(`https://app.olimjanov.uz/v1/service?id=${id}`, {}, { headers });
+            const res = await axios.delete(`https://app.olimjanov.uz/v1/service?id=${id}`, 
+             { headers }
+            );
             const data = await res.data;
             console.log(data);
             toast.success("Service deleted successfully");
@@ -53,7 +55,7 @@ const ServiceStore = create((set: SetState<any>) => ({
                 "Content-Type": "application/json"
             };
             if (typeof newService.price === "string") {
-                newService.price = parseFloat(newService.price); // yoki Number(data.price) yoki +data.price ham ishlaydi
+                newService.price = parseFloat(newService.price);
             }
             const res = await axios.post("https://app.olimjanov.uz/v1/service/create", { owner_email: email, ...newService }, { headers });
             const data = await res.data;

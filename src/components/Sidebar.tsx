@@ -17,6 +17,7 @@ const containerVariants = {
     },
     open: {
         width: "16rem",
+       
         transition: {
             type: "spring",
             damping: 15,
@@ -64,7 +65,7 @@ const Sidebar = () => {
         <motion.nav variants={containerVariants}
             animate={containerControls}
             initial="close"
-            className='bg-neutral-900  flex flex-col z-10 gap-14 p-4 sticky top-0 left-0 h-full shadow shadow-neutral-600'>
+            className='bg-neutral-900  flex flex-col z-10 gap-14 p-4 max-sm:fixed max-md:fixed sticky top-0 left-0 h-full shadow shadow-neutral-600'>
             <div className='flex flex-row w-full justify-between place-items-center'>
                 <div className='w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-700 rounded-full'/>
 
@@ -96,12 +97,16 @@ const Sidebar = () => {
                     <ChartBarIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>
                 </Link>
-                <SidebarLinks name='Projects'>
+                <Link to='/create'>
+                <SidebarLinks name='Create'>
                     <Square2StackIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>
+                </Link>
+                <Link to='/tasks'>
                 <SidebarLinks name='Tasks'>
                     <DocumentCheckIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>
+                </Link>
                 <SidebarLinks name='Reporting'>
                     <ChartPieIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>

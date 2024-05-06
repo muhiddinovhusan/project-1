@@ -13,7 +13,9 @@ const Layout = ({ children }: { children: React.ReactNode }) =>{
     }, [token]);
   return (
     <main  className="w-full h-screen flex flex-row relative">
+      
     <Sidebar />
+
     <section className="w-full flex flex-col p-10 ml-20  gap-5">
     
     {children}
