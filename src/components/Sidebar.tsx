@@ -65,7 +65,7 @@ const Sidebar = () => {
         <motion.nav variants={containerVariants}
             animate={containerControls}
             initial="close"
-            className='bg-neutral-900  flex flex-col z-10 gap-14 p-4 max-sm:fixed max-md:fixed sticky top-0 left-0 h-full shadow shadow-neutral-600'>
+            className='bg-neutral-900  flex flex-col z-10 gap-14 p-4 max-sm:fixed max-md:fixed  max-xl:fixed sticky top-0 left-0 h-full shadow shadow-neutral-600'>
             <div className='flex flex-row w-full justify-between place-items-center'>
                 <div className='w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-700 rounded-full'/>
 
