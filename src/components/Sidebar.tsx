@@ -110,9 +110,12 @@ const Sidebar = () => {
                 <SidebarLinks name='Reporting'>
                     <ChartPieIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>
+                <Link to='/users'>
                 <SidebarLinks name='Users'>
                     <UsersIcon className='stroke-inherit stroke-[0.75] min-w-[30px] w-[30px]' />
                 </SidebarLinks>
+                </Link>
+               
             </div>
             <div className='flex flex-col gap-2'>
                 <ProjectLink

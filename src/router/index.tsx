@@ -7,6 +7,7 @@ import Home from "../pages/home";
 import Layout from "../layout/layout";
 import CreateServices from "../pages/create/CreateServices";
 import Tasks from "../pages/tasks/Tasks";
+import Users from "../pages/users/Users";
 // import { ForgotPassword, Home, Login, Register, Verify } from "../pages";
 
 const PageRoutes = () => {
@@ -38,6 +39,14 @@ const PageRoutes = () => {
           element={
             <Layout>
               <Tasks />
+            </Layout>
+          }
+        /> 
+        <Route
+          path="/users"
+          element={
+            <Layout>
+              <Users />
             </Layout>
           }
         /> 
